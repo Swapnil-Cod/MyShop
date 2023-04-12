@@ -1,0 +1,12 @@
+.background{
+    background-color: navy;
+    color: beige;
+}
+
+.a{
+    background-color: navy;
+    color: white;
+    padding: 4px 5px;
+    text-align: center;
+    text-decoration: none;
+  }
