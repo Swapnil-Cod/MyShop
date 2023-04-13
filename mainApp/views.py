@@ -12,9 +12,14 @@ import random
 # Create your views here.
 
 def home(request):
-    data = Product.objects.all()
-    data = data[::-1] 
-    return render(request,"index.html", {'Data': data})
+    if(request.method=="POST"):
+        search = request.POST.get("search")
+        data = Product.objects.filter(Q(name__icontains=search))
+        data = data[::-1]
+    else:
+        data = Product.objects.all()
+        data =data[::-1]
+    return render(request,"index.html",{"Data":data})
 
 def shop(request,mc,sc,br):
     if(mc=="all" and sc=="all" and br=="all"):
