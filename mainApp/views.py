@@ -6,6 +6,7 @@ from .models import *
 from MyShop.settings import RAZORPAY_API_KEY, RAZORPAY_API_SECRET_KEY
 from django.conf import settings
 from django.core.mail import send_mail
+from django.db.models import Q
 import razorpay
 import random
 
